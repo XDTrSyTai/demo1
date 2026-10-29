@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV &amp; Portfolio Cá Nhân | Nguyễn Văn A</title>
+  <meta name="description"
+    content="Trang web CV cá nhân chuyên nghiệp, hiện đại, giới thiệu kỹ năng lập trình, kinh nghiệm và dự án tiêu biểu.">
+
+  <!-- Google Fonts: Plus Jakarta Sans and JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Script chống chớp màu (Anti-FOUC) khi tải Theme -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-accent">&lt;</span>Dev<span class="logo-name">Portfolio</span><span
+          class="logo-accent">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about" class="nav-link">Giới thiệu</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Kỹ năng</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Kinh nghiệm</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Dự án</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Liên hệ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons (Theme Toggle and Mobile Menu) -->
+      <div class="nav-actions">
+        <!-- Nút chuyển đổi Dark / Light mode -->
+        <button type="button" id="theme-toggle" class="btn-icon theme-btn" aria-label="Chuyển đổi giao diện Sáng / Tối"
+          title="Chuyển đổi giao diện">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+
+        <!-- Nút mở menu trên Mobile -->
+        <button type="button" id="mobile-menu-toggle" class="btn-icon hamburger-btn" aria-label="Mở bảng điều hướng">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Hero Content / Text -->
+        <div class="hero-text fade-in-up">
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <span>Sẵn sàng cho dự án &amp; cơ hội mới</span>
+          </div>
+
+          <h1 class="hero-title">
+            Xin chào, tôi là <br>
+            <span class="gradient-text">Nguyễn Văn A</span>
+          </h1>
+
+          <h2 class="hero-role">
+            <span class="role-prefix">&gt; </span><span class="typed-text" id="role-text">Full Stack
+              Developer</span><span class="cursor">|</span>
+          </h2>
+
+          <p class="hero-description">
+            Lập trình viên đam mê kiến tạo trải nghiệm web hiện đại, tối ưu hiệu năng và thiết kế giao diện sang trọng.
+            Tận tâm tạo ra các giải pháp phần mềm chất lượng cao, bền vững và thân thiện với người dùng.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="hero-cta">
+            <a href="#contact" class="btn btn-primary">
+              <span>Liên hệ hợp tác</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <!-- Liên kết tải CV: Bạn có thể thay href bằng file PDF thực tế của bạn -->
+            <a href="#download-cv" id="cv-download-btn" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Tải CV (PDF)</span>
+            </a>
+          </div>
+
+          <!-- Social Links Bar (Các mạng xã hội) -->
+          <div class="social-bar">
+            <span class="social-label">Mạng xã hội:</span>
+            <div class="social-links">
+              <!-- GitHub -->
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="GitHub Profile" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                  </path>
+                </svg>
+              </a>
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="LinkedIn Profile" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <!-- Facebook -->
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="Facebook Profile" title="Facebook">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+              </a>
+              <!-- X (Twitter) -->
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn"
+                aria-label="X (Twitter) Profile" title="X (Twitter)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+              </a>
+              <!-- Email / Mailto -->
+              <a href="mailto:contact@nguyenana.dev" class="social-icon-btn" aria-label="Gửi Email trực tiếp"
+                title="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Avatar (Placeholder có thể dễ dàng thay đổi) -->
+        <div class="hero-visual fade-in-up">
+          <div class="avatar-card-wrapper">
+            <div class="avatar-glow"></div>
+            <div class="avatar-card">
+              <!-- CHÚ THÍCH: Khi muốn thay ảnh thật, hãy đổi đường dẫn src dưới đây (ví dụ: assets/images/my-avatar.jpg) -->
+              <img id="profile-avatar" src="assets/images/avatar-placeholder.svg" alt="Ảnh đại diện Nguyễn Văn A"
+                class="avatar-image" loading="eager">
+              <div class="avatar-badge">
+                <span class="badge-icon">⚡</span>
+                <span class="badge-text">Frontend &amp; Backend</span>
+              </div>
+            </div>
+            <!-- Gợi ý chỉnh sửa ảnh -->
+            <div class="avatar-hint">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Có thể thay ảnh tại <code>assets/images/avatar.jpg</code></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <span class="metric-number">03+</span>
+            <span class="metric-label">Năm kinh nghiệm</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">25+</span>
+            <span class="metric-label">Dự án hoàn thành</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">15+</span>
+            <span class="metric-label">Công nghệ thành thạo</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-number">99%</span>
+            <span class="metric-label">Đúng tiến độ &amp; Chất lượng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Khám phá</span>
+          <h2 class="section-title">Về Bản Thân Tôi</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text-col">
+            <h3 class="about-heading">Lập trình viên kiên trì, đam mê trải nghiệm người dùng &amp; code sạch.</h3>
+            <p class="about-para">
+              Tôi là một kỹ sư phần mềm tập trung vào việc kiến tạo những sản phẩm số hiệu quả, tinh tế và dễ mở rộng.
+              Với tư duy giải quyết vấn đề từ gốc rễ, tôi luôn chú trọng vào trải nghiệm người dùng, tốc độ tải trang và
+              tính bảo trì của mã nguồn.
+            </p>
+            <p class="about-para">
+              Dù làm việc độc lập hay theo nhóm (Agile/Scrum), tôi luôn giữ thái độ cầu thị, chủ động giao tiếp và không
+              ngừng cập nhật những xu hướng công nghệ mới nhất trên thế giới.
+            </p>
+
+            <div class="personal-info-list">
+              <div class="info-item">
+                <span class="info-title">Vị trí:</span>
+                <span class="info-val">Hà Nội / TP. Hồ Chí Minh (Remote / Onsite)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-title">Học vấn:</span>
+                <span class="info-val">Cử nhân Công nghệ Thông tin</span>
+              </div>
+              <div class="info-item">
+                <span class="info-title">Ngôn ngữ:</span>
+                <span class="info-val">Tiếng Việt (Bản ngữ), Tiếng Anh (Chuyên ngành)</span>
+              </div>
+              <div class="info-item">
+                <span class="info-title">Tình trạng:</span>
+                <span class="info-val highlight-status">Sẵn sàng nhận việc mới</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-cards-col">
+            <div class="feature-card">
+              <div class="feature-icon">✨</div>
+              <h4>Giao diện Tinh tế &amp; Sang trọng</h4>
+              <p>Mỗi chi tiết pixel, khoảng cách và màu sắc đều được tinh chỉnh để đem lại cảm giác cao cấp, chỉn chu
+                nhất.</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h4>Hiệu năng &amp; Tối ưu hóa</h4>
+              <p>Cam kết chỉ số Web Vitals cao, tải nhanh, mượt mà trên tất cả thiết bị từ smartphone đến màn hình lớn.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🛡️</div>
+              <h4>Code Sạch &amp; Dễ mở rộng</h4>
+              <p>Viết mã chuẩn mực, cấu trúc module rõ ràng, dễ bảo trì, dễ viết test và sẵn sàng tích hợp CI/CD.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Năng lực chuyên môn</span>
+          <h2 class="section-title">Kỹ Năng Lập Trình (Coding Skills)</h2>
+          <p class="section-subtitle">Tập hợp các công nghệ, ngôn ngữ và công cụ tôi sử dụng thường xuyên trong công
+            việc.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="skills-wrapper">
+          <!-- Skill Category: Frontend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper front">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Frontend Development</h3>
+                <span class="category-desc">Xây dựng giao diện web tương tác cao</span>
+              </div>
+            </div>
+
+            <div class="skill-tags">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">HTML5 / Modern CSS3</span>
+                  <span class="skill-lvl">95%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">JavaScript (ES6+)</span>
+                  <span class="skill-lvl">90%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">TypeScript</span>
+                  <span class="skill-lvl">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">React.js &amp; Next.js</span>
+                  <span class="skill-lvl">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="88"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Tailwind CSS / Sass</span>
+                  <span class="skill-lvl">92%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="92"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category: Backend -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper back">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect>
+                  <rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">Backend &amp; Database</h3>
+                <span class="category-desc">Xử lý dữ liệu, API &amp; kiến trúc máy chủ</span>
+              </div>
+            </div>
+
+            <div class="skill-tags">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Node.js &amp; Express</span>
+                  <span class="skill-lvl">86%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="86"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Python / FastAPI</span>
+                  <span class="skill-lvl">80%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="80"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">PostgreSQL / MySQL</span>
+                  <span class="skill-lvl">85%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">MongoDB &amp; Redis</span>
+                  <span class="skill-lvl">82%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="82"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">RESTful API &amp; GraphQL</span>
+                  <span class="skill-lvl">88%</span>
+                </div>
+                <div class="progress-bar">
+                  <div class="progress-fill" data-level="88"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category: DevOps and Tools -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <div class="category-icon-wrapper devops">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path
+                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                  </path>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <div>
+                <h3 class="category-title">DevOps &amp; Quy trình</h3>
+                <span class="category-desc">Công cụ triển khai và quản lý mã nguồn</span>
+              </div>
+            </div>
+
+            <div class="skill-badges-grid">
+              <span class="badge-tech">Git &amp; GitHub</span>
+              <span class="badge-tech">Docker Container</span>
+              <span class="badge-tech">CI/CD Pipeline</span>
+              <span class="badge-tech">Linux &amp; Shell</span>
+              <span class="badge-tech">Vercel &amp; AWS S3</span>
+              <span class="badge-tech">Postman / Swagger</span>
+              <span class="badge-tech">Figma (UI Hand-off)</span>
+              <span class="badge-tech">Agile / Scrum</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE AND EDUCATION SECTION -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Hành trình phát triển</span>
+          <h2 class="section-title">Kinh Nghiệm &amp; Học Vấn</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-period">2023 — Hiện tại</span>
+                <span class="timeline-role">Senior Frontend / Full Stack Developer</span>
+              </div>
+              <h3 class="timeline-company">Công ty Công nghệ Sáng Tạo ABC</h3>
+              <p class="timeline-desc">
+                Chịu trách nhiệm phát triển hệ thống web ứng dụng SaaS phục vụ hơn 50.000 người dùng hàng tháng. Tối ưu
+                hóa chỉ số Core Web Vitals giúp cải thiện tốc độ tải 40%, triển khai Dark/Light mode và thiết kế lại
+                luồng thanh toán.
+              </p>
+              <div class="timeline-tags">
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>Next.js</span>
+                <span>Node.js</span>
+                <span>Tailwind</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-period">2021 — 2023</span>
+                <span class="timeline-role">Web Developer</span>
+              </div>
+              <h3 class="timeline-company">Tech Solutions Studio</h3>
+              <p class="timeline-desc">
+                Phối hợp cùng đội ngũ thiết kế UI/UX để chuyển hóa các bản vẽ Figma thành website thực tế hoàn chỉnh,
+                chuẩn responsive và thân thiện với SEO. Xây dựng các RESTful API và tích hợp cổng thanh toán trực tuyến.
+              </p>
+              <div class="timeline-tags">
+                <span>JavaScript</span>
+                <span>Express</span>
+                <span>MongoDB</span>
+                <span>REST API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-period">2017 — 2021</span>
+                <span class="timeline-role">Cử nhân Công nghệ Thông tin</span>
+              </div>
+              <h3 class="timeline-company">Đại học Công Nghệ</h3>
+              <p class="timeline-desc">
+                Tốt nghiệp loại Giỏi chuyên ngành Kỹ thuật Phần mềm. Đạt giải thưởng Nghiên cứu Khoa học Sinh viên cấp
+                trường với đề tài tối ưu hóa giao diện ứng dụng di động.
+              </p>
+              <div class="timeline-tags">
+                <span>Cấu trúc dữ liệu</span>
+                <span>OOP</span>
+                <span>Cơ sở dữ liệu</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Sản phẩm tiêu biểu</span>
+          <h2 class="section-title">Dự Án Đã Thực Hiện</h2>
+          <p class="section-subtitle">Một số sản phẩm thực tế tôi đã thiết kế và lập trình.</p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/project-1.svg" alt="Giao diện E-Commerce Platform" class="project-img">
+              <div class="project-overlay">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-link"
+                  title="Xem mã nguồn">GitHub</a>
+                <a href="#" class="btn-project-link primary" title="Xem trang trực tiếp">Live Demo</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span>Next.js</span>
+                <span>TypeScript</span>
+                <span>Stripe</span>
+                <span>Tailwind</span>
+              </div>
+              <h3 class="project-title">Nền tảng Thương mại Điện tử Đa kênh</h3>
+              <p class="project-desc">
+                Trang web bán hàng cao cấp với giỏ hàng thời gian thực, quản lý kho hàng tự động, tích hợp thanh toán đa
+                phương thức và trang quản trị trực quan.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+            <div class="project-img-wrapper">
+              <img src="assets/images/project-2.svg" alt="Giao diện AI Chat Assistant" class="project-img">
+              <div class="project-overlay">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-project-link"
+                  title="Xem mã nguồn">GitHub</a>
+                <a href="#" class="btn-project-link primary" title="Xem trang trực tiếp">Live Demo</a>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-tags">
+                <span>React</span>
+                <span>Node.js</span>
+                <span>OpenAI / Gemini API</span>
+                <span>WebSocket</span>
+              </div>
+              <h3 class="project-title">Trợ lý AI Thông minh &amp; Phân tích Dữ liệu</h3>
+              <p class="project-desc">
+                Ứng dụng trò chuyện AI theo thời gian thực, phân tích tài liệu văn bản, tóm tắt nội dung tự động và xuất
+                báo cáo PDF tức thì.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Kết nối</span>
+          <h2 class="section-title">Liên Hệ Với Tôi</h2>
+          <p class="section-subtitle">Bạn có dự án thú vị hoặc muốn trao đổi cơ hội công việc? Đừng ngần ngại liên lạc!
+          </p>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Column -->
+          <div class="contact-info-card">
+            <h3 class="contact-card-title">Thông tin liên lạc</h3>
+            <p class="contact-card-desc">Tôi luôn sẵn sàng phản hồi nhanh chóng qua email hoặc các kênh mạng xã hội.</p>
+
+            <div class="contact-items">
+              <!-- Item Email with Copy button -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="item-label">Email cá nhân</span>
+                  <span class="item-value" id="copy-email-text">contact@nguyenana.dev</span>
+                </div>
+                <button type="button" class="btn-copy" id="btn-copy-email" aria-label="Sao chép địa chỉ email" title="Sao chép địa chỉ email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect>
+                    <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Item Phone -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                    </path>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="item-label">Số điện thoại / Zalo</span>
+                  <a href="tel:+84987654321" class="item-value link-val">(+84)&nbsp;0987&nbsp;654&nbsp;321</a>
+                </div>
+              </div>
+
+              <!-- Item Location -->
+              <div class="contact-item">
+                <div class="contact-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2">
+                    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                </div>
+                <div class="contact-item-text">
+                  <span class="item-label">Địa điểm sinh sống</span>
+                  <span class="item-value">Hà Nội &amp; TP. Hồ Chí Minh, Việt Nam</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Networks Full Bar -->
+            <div class="contact-socials-block">
+              <span class="socials-block-title">Kênh trực tuyến:</span>
+              <div class="social-links-grid">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+                  <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+                  <span>Facebook</span>
+                </a>
+                <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-pill">
+                  <span>X / Twitter</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card">
+            <h3 class="contact-card-title">Gửi tin nhắn trực tiếp</h3>
+            <form id="contact-form" class="contact-form" onsubmit="return false;">
+              <div class="form-group">
+                <label for="form-name">Họ và tên <span class="req">*</span></label>
+                <input type="text" id="form-name" name="name" placeholder="Ví dụ: Trần Minh Nam" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email">Địa chỉ Email <span class="req">*</span></label>
+                <input type="email" id="form-email" name="email" placeholder="name@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-subject">Chủ đề</label>
+                <input type="text" id="form-subject" name="subject" placeholder="Cơ hội hợp tác / Trao đổi dự án">
+              </div>
+
+              <div class="form-group">
+                <label for="form-message">Nội dung tin nhắn <span class="req">*</span></label>
+                <textarea id="form-message" name="message" rows="4" placeholder="Hãy để lại lời nhắn của bạn ở đây..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" id="form-submit-btn" class="btn btn-primary btn-block">
+                <span>Gửi lời nhắn</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+              <div id="form-status" class="form-status"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="brand-logo footer-logo">
+          <span class="logo-accent">&lt;</span>Dev<span class="logo-name">Portfolio</span><span
+            class="logo-accent">/&gt;</span>
+        </a>
+        <p class="footer-tagline">Thiết kế tinh tế &bull; Mã nguồn chuẩn mực &bull; Hiệu năng vượt trội</p>
+      </div>
+
+      <div class="footer-center">
+        <p>&copy; <span id="current-year">2026</span> Nguyễn Văn A. Mọi quyền được bảo lưu.</p>
+      </div>
+
+      <div class="footer-right">
+        <!-- Nút cuộn lên đầu trang -->
+        <a href="#hero" id="back-to-top" class="back-to-top" aria-label="Cuộn lên đầu trang" title="Lên đầu trang">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Thông Báo (Dùng khi copy email thành công hoặc submit form) -->
+  <div id="toast" class="toast">
+    <span id="toast-message">Đã sao chép!</span>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
