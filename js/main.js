@@ -261,6 +261,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // -------------------------------------------------------------------------
+  // 10. PHÓNG TO / THU NHỎ ẢNH ĐẠI DIỆN TẠI CHỖ KHI NHẤP CHUỘT
+  // -------------------------------------------------------------------------
+  const avatarContainer = document.getElementById('avatar-container');
+  if (avatarContainer) {
+    avatarContainer.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isZoomed = avatarContainer.classList.toggle('zoomed');
+      avatarContainer.setAttribute('aria-expanded', isZoomed ? 'true' : 'false');
+    });
+
+    // Cho phép dùng phím Enter hoặc Space để phóng to
+    avatarContainer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        avatarContainer.click();
+      }
+    });
+
+    // Thu nhỏ lại khi nhấp chuột ra ngoài ảnh
+    document.addEventListener('click', (e) => {
+      if (!avatarContainer.contains(e.target)) {
+        avatarContainer.classList.remove('zoomed');
+        avatarContainer.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Thu nhỏ khi nhấn phím Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        avatarContainer.classList.remove('zoomed');
+        avatarContainer.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
   // Cập nhật năm hiện tại ở footer
   const currentYearEl = document.getElementById('current-year');
   if (currentYearEl) {

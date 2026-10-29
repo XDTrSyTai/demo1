@@ -184,29 +184,18 @@
           </div>
         </div>
 
-        <!-- Hero Avatar (Placeholder có thể dễ dàng thay đổi) -->
+        <!-- Hero Avatar Chân Dung Cá Nhân -->
         <div class="hero-visual fade-in-up">
           <div class="avatar-card-wrapper">
             <div class="avatar-glow"></div>
-            <div class="avatar-card">
-              <!-- CHÚ THÍCH: Khi muốn thay ảnh thật, hãy đổi đường dẫn src dưới đây (ví dụ: assets/images/my-avatar.jpg) -->
-              <img id="profile-avatar" src="assets/images/avatar-placeholder.svg" alt="Ảnh đại diện Nguyễn Văn A"
+            <!-- Khung ảnh tròn với hiệu ứng xoay viền khi hover và phóng to khi click -->
+            <button type="button" class="avatar-card" id="avatar-container"
+              aria-label="Ảnh đại diện cá nhân">
+              <span class="avatar-ring-glow"></span>
+              <span class="avatar-ring-border"></span>
+              <img id="profile-avatar" src="assets/images/avatar.jpg" alt="Ảnh đại diện cá nhân"
                 class="avatar-image" loading="eager">
-              <div class="avatar-badge">
-                <span class="badge-icon">⚡</span>
-                <span class="badge-text">Frontend &amp; Backend</span>
-              </div>
-            </div>
-            <!-- Gợi ý chỉnh sửa ảnh -->
-            <div class="avatar-hint">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
-              </svg>
-              <span>Có thể thay ảnh tại <code>assets/images/avatar.jpg</code></span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
